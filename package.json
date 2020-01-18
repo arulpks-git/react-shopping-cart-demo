@@ -3,7 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "materialize-css": "^1.0.0-rc.2",
+    "node-sass": "^4.13.1",
+    "rc-slider": "^8.7.1",
     "react": "^16.6.3",
+    "react-device-detect": "^1.11.14",
     "react-dom": "^16.6.3",
     "react-redux": "^6.0.0",
     "react-router-dom": "^4.3.1",
