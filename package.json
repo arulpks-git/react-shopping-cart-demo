@@ -1,8 +1,10 @@
 {
   "name": "my-shopping-cart",
+  "homepage": "https://arulpks-git.github.io/react-shopping-cart-demo/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "gh-pages": "^2.2.0",
     "materialize-css": "^1.0.0-rc.2",
     "node-sass": "^4.13.1",
     "rc-slider": "^8.7.1",
@@ -16,6 +18,8 @@
     "redux-thunk": "^2.3.0"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

@@ -15,11 +15,11 @@ import {
     return(
         <nav className="nav-wrapper blue accent-4">
         <div className="">
-                    <Link to="/" className="brand-logo left"> {isMobile ? (<i className="material-icons">start</i>) : "Shopping"}</Link>
+                    <Link to="/" className="brand-logo left"> <i className="material-icons yellow-text">start</i></Link>
                     
                     <ul className="right">
                        
-                        <li>
+                        <li  style={{"lineHeight":"31px"}}>
                              <SearchComponent/>
                         </li>
                         <li><Link to="/cart" className="notification">

@@ -81,16 +81,14 @@ import {
 
     render(){
         
-        console.log("props items=>",this.props.items);
+       
         let productItem = Object.assign([],this.props.items);
-        console.log("productItems=>",productItem);
+       
         if(this.state.sortField != '' && productItem.length > 0)
         productItem.sort(this.compareValues(this.state.sortField,this.state.sortOrder));
-        console.log("sortfield",this.state.sortField);
-        console.log("sortOrder",this.state.sortOrder);
-        console.log("productItems1234=>",productItem);
+        
         let itemList = (productItem.length > 0) && productItem.map(item=>{
-            console.log("items-=>",item);
+           
             if( (item.price >= this.state.priceRange[0] && item.price <= this.state.priceRange[1] ) 
                 &&  (item.name.includes(this.props.searchItemText) || item.category.includes(this.props.searchItemText))
                 ) {
@@ -121,9 +119,9 @@ import {
         return(
             <React.Fragment>
 
-                <BrowserView>
+            <BrowserView>
             <div className={"leftSidebar hide-on-small-only"}>
-                <SliderComponent onApply={this.priceFilter} className={" hide-on-small-only"}/>
+                <SliderComponent onApply={this.priceFilter} className={"hide-on-small-only"}/>
             </div>
             <div className="mainBar">
             <HeaderSortComponent onSortApply={this.sortFilter} />
