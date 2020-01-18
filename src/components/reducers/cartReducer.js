@@ -1,5 +1,5 @@
 
-import { ADD_TO_CART,REMOVE_ITEM,SUB_QUANTITY,ADD_QUANTITY,ADD_SHIPPING,FETCH_CART_LIST,FETCH_CART_LIST_SUCCESS,FETCH_CART_LIST_FAILURE } from '../actions/action-types/cart-actions'
+import { ADD_TO_CART,REMOVE_ITEM,SUB_QUANTITY,ADD_QUANTITY,ADD_SHIPPING,FETCH_CART_LIST,FETCH_CART_LIST_SUCCESS,FETCH_CART_LIST_FAILURE,ADD_TO_SEARCH_ITEM_TEXT } from '../actions/action-types/cart-actions'
 
 
 const initState = {
@@ -8,7 +8,8 @@ const initState = {
     isFetching: false,
     isError: false,
     addedItems:[],
-    total: 0
+    total: 0,
+    searchItemText: ''
 
 }
 const cartReducer= (state = initState,action)=>{
@@ -39,6 +40,12 @@ const cartReducer= (state = initState,action)=>{
       }
     }
    
+    if(action.type === ADD_TO_SEARCH_ITEM_TEXT){
+        return {
+            ...state,
+            searchItemText : action.searchText
+        }
+    }
     //INSIDE HOME COMPONENT
     if(action.type === ADD_TO_CART){
           let addedItem = state.items.find(item=> item.id === action.id)
