@@ -7,7 +7,7 @@ import Cart from './components/Cart'
 class App extends Component {
   render() {
     return (
-       <BrowserRouter>
+       <BrowserRouter basename="react-shopping-cart-demo">
             <div className="App">
             
               <Navbar/>
