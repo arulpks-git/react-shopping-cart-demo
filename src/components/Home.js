@@ -7,12 +7,7 @@ import SliderComponent from './SliderComponent'
 import FilterModal from './FilterModal'
 import SortModal from './SortModal'
 import HeaderSortComponent from './HeaderSortComponent'
-import {
-    BrowserView,
-    MobileView,
-    isBrowser,
-    isMobile
-  } from "react-device-detect";
+
 
 
 
@@ -26,9 +21,12 @@ import {
     handleClick = (id)=>{
         this.props.addToCart(id); 
     }
+   
     componentDidMount() {
         this.props.fetch_cart_list_from_api();
+        
     }
+    
     priceFilter = (value) => {
         console.log("Price Filter",value);
         let minRange,maxRange;
@@ -104,9 +102,9 @@ import {
 
                         <div className="card-content">
                             <p>{item.category}</p>
-                            <p><b>Price: {item.price}$</b></p>
+                            <p><b>${item.price} </b> <span style={{"color":"green"}}>{item.discount}% off</span></p>
                             <button class="btn-small orange accent-4 btncurve" type="submit" name="action" onClick={ () => {this.handleClick(item.id)}}>
-                         Add to Cart 
+                            <span style={{"color":"black"}}>Add to Cart </span>
                         </button>
                         </div>
                  </div>
@@ -117,41 +115,46 @@ import {
         })
 
         return(
-            <React.Fragment>
+           
 
-            <BrowserView>
-            <div className={"leftSidebar hide-on-small-only"}>
-                <SliderComponent onApply={this.priceFilter} className={"hide-on-small-only"}/>
-            </div>
-            <div className="mainBar">
-            <HeaderSortComponent onSortApply={this.sortFilter} />
-                <div className="row box">
-                    {itemList}
+          
+            <div className="row">
+                <div className={"col s12 m4 l2 hide-on-med-and-down"}>
+                    <SliderComponent onApply={this.priceFilter} className={"hide-on-small-only"}/>
                 </div>
-            </div>
-            </BrowserView>
-
-            
-            { isMobile && <div className="mainBarMobile">
-                <div className="row">
-                    <div className="left center sbox">
+                <div className="col s12 m8 l10">
+                <HeaderSortComponent onSortApply={this.sortFilter} />
+                <div className="row hide-on-large-only">
+                    <div className="col s6 center-align">
                     <FilterModal onApply={this.priceFilter}/>
                     </div>
-                    <div className="right center sbox">
+                    <div className="col s6 center-align">
                     <SortModal onSortApply={this.sortFilter}/>
                     
                     </div>
                 </div>
-                <div className="row box">
-                    {itemList}
+
+                    <div className="row ">
+                    <div class="col s12 cards-container">
+                        {itemList}
+                        </div>
+                    </div>
                 </div>
+                
             </div>
-            }
+           
 
             
-                 </React.Fragment>
+           
+
+           
         )
     }
+   
+
+  
+
+    
 }
 const mapStateToProps = (state)=>{
     return {

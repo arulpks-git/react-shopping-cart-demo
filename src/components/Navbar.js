@@ -2,12 +2,8 @@ import React from 'react';
 import Counter from './Counter';
 import { Link } from 'react-router-dom';
 import SearchComponent from './SearchComponent';
-import {
-    BrowserView,
-    MobileView,
-    isBrowser,
-    isMobile
-  } from "react-device-detect";
+
+
 
 
  const Navbar = ()=>{

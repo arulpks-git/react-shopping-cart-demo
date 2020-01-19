@@ -15,7 +15,13 @@ class App extends Component {
                     <Route exact path="/" component={Home}/>
                     <Route path="/cart" component={Cart}/>
                   </Switch>
+                  <footer class="page-footer blue accent-4 valign-wrapper">
+                    <div class="container center-align">
+                      © 2014 Copyright Text
+                    </div>
+                  </footer>
              </div>
+
        </BrowserRouter>
       
     );

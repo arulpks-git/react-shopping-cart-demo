@@ -53,9 +53,9 @@ class Cart extends Component{
                 <p>Nothing.</p>
              )
        return(
-            <div className="container">
-                <div className="cart">
-                    <h5>You have ordered:</h5>
+            <div className="row">
+                <div className="cart col s12 m9 l9">
+                  
                     <ul className="collection">
                         {addedItems}
                     </ul>

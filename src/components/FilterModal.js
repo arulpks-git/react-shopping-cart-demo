@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import M from "materialize-css";
 import "materialize-css/dist/css/materialize.min.css";
 import SliderComponent from './SliderComponent'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {  faSort} from '@fortawesome/free-solid-svg-icons'
 
 class FilterModal extends Component {
   constructor(props){
@@ -43,7 +45,7 @@ class FilterModal extends Component {
           className=" modal-trigger"
           data-target="modal1"
         >
-          <i className="material-icons">unfold_more</i><span>Sort</span>
+          <FontAwesomeIcon icon={faSort}/><span>Sort</span>
         </a>
 
         <div
@@ -60,6 +62,13 @@ class FilterModal extends Component {
           <div className="modal-content">
           <h4>Filter Options</h4>
           <SliderComponent onApply={this.props.onApply} />
+          </div>
+
+          <div className="modal-footer">
+            <a className="modal-close waves-effect waves-red btn-flat">
+              Cancel
+            </a>
+            
           </div>
           
         </div>

@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import M from "materialize-css";
 import "materialize-css/dist/css/materialize.min.css";
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {  faFilter} from '@fortawesome/free-solid-svg-icons'
 
 class SortModal extends Component {
   constructor(props){
@@ -50,7 +51,7 @@ class SortModal extends Component {
           className=" modal-trigger"
           data-target="modal2"
         >
-          <i className="material-icons">local_bar</i><span>Filter</span>
+          <FontAwesomeIcon icon={faFilter}/><span>Filter</span>
         </a>
 
         <div
@@ -66,7 +67,7 @@ class SortModal extends Component {
                         modal-fixed-footer to the "modal" div*/}
           <div className="modal-content">
           <h4>Sort Options</h4>
-          <form action="#">
+          <form action="#" className="left-align">
             <p>
             <label>
                 <input name="group1" type="radio" class="with-gap" value='{"field":"price","sort":"desc"}' onChange={this.handleOptionChange}/>

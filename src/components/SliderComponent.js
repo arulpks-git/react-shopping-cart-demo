@@ -28,7 +28,7 @@ class SliderComponent extends Component{
                     <label>Price: </label>
                         <Range allowCross={false} defaultValue={[0, 100]} onChange={this.log} marks={{0:'$100',100:'$10,000'}}/>             
                     </div>
-                    <div className="sliderapply">
+                    <div className="sliderapply center-align">
                         <button class="btn blue accent-4 btncurve" type="submit" name="action" onClick={ () => {this.props.onApply(this.state.priceRange)}}>
                         <a className="modal-close"> Apply </a>
                         </button>
