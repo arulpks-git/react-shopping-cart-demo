@@ -1,5 +1,5 @@
 
-import { ADD_TO_CART,REMOVE_ITEM,SUB_QUANTITY,ADD_QUANTITY,ADD_SHIPPING,FETCH_CART_LIST,FETCH_CART_LIST_SUCCESS,FETCH_CART_LIST_FAILURE} from './action-types/cart-actions'
+import { ADD_TO_CART,REMOVE_ITEM,SUB_QUANTITY,ADD_QUANTITY,ADD_SHIPPING,FETCH_CART_LIST,FETCH_CART_LIST_SUCCESS,FETCH_CART_LIST_FAILURE,ADD_TO_SEARCH_ITEM_TEXT} from './action-types/cart-actions'
 import store from "../../store";
 
 //add cart action
@@ -9,6 +9,15 @@ export const addToCart= (id)=>{
         id
     }
 }
+
+//add search item text action
+export const addSearchItemText= (searchText)=>{
+  return{
+      type: ADD_TO_SEARCH_ITEM_TEXT,
+      searchText
+  }
+}
+
 //remove item action
 export const removeItem=(id)=>{
     return{
