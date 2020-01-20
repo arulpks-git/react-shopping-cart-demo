@@ -48,13 +48,18 @@
     width: 20%;
     margin-right: 25px;
 }
-
+.item-img{
+  width: 30%;
 }
-
-
 .item-desc{
-    align-self:center;
+  width: 30%;
+  align-self:center;
 }
+
+}
+
+
+
 
 .notification {
    position: relative;
@@ -228,8 +233,13 @@
   
 }
 
-
-
+.square{
+  width:20px;
+  height:20px;
+  border: 1px solid grey; 
+  display: inline-block;
+  
+}
 .btncurve{
 border-radius: 20px;
 }

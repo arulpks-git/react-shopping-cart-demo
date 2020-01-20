@@ -14,7 +14,9 @@ class Cart extends Component{
         this.props.addQuantity(id);
     }
     //to substruct from the quantity
+
     handleSubtractQuantity = (id)=>{
+       
         this.props.subtractQuantity(id);
     }
     render(){
@@ -32,16 +34,23 @@ class Cart extends Component{
                                     <div className="item-desc">
                                         <span className="title">{item.name}</span>
                                         <p>{item.category}</p>
-                                        <p><b>Price: {item.price}$</b></p> 
+                                        <p><b>${item.price}</b> <span className="green-text">{item.discount}% off</span></p> 
                                         <p>
-                                            <b>Quantity: {item.quantity}</b> 
+                                            
                                         </p>
-                                        <div className="add-remove">
-                                            <Link to="/cart"><i className="material-icons" onClick={()=>{this.handleAddQuantity(item.id)}}>arrow_drop_up</i></Link>
-                                            <Link to="/cart"><i className="material-icons" onClick={()=>{this.handleSubtractQuantity(item.id)}}>arrow_drop_down</i></Link>
-                                        </div>
-                                        <button className="waves-effect waves-light btn pink remove" onClick={()=>{this.handleRemove(item.id)}}>Remove</button>
+                                                                                                                 
                                     </div>
+                                    <div className="item-desc">
+                                    <div className="add-remove valign-wrapper center-align">
+                                            <i className="material-icons grey-text tiny"  onClick={()=>{this.handleSubtractQuantity(item.id)}}>remove_circle_outline</i>
+                                            &nbsp;&nbsp;<div className="square valign-wrapper center-align ">{item.quantity}</div>&nbsp;&nbsp;
+                                            <i className="material-icons grey-text tiny" onClick={()=>{this.handleAddQuantity(item.id)}}>add_circle_outline</i>
+                                    </div>
+                                    </div>
+
+                                        <div className="item-desc">
+                                        <span className="dark-black-text bold-text remove" onClick={()=>{this.handleRemove(item.id)}}><b>REMOVE</b></span>
+                                        </div>
                                     
                                 </li>
                          

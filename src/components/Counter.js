@@ -8,14 +8,14 @@ class Counter extends Component{
     render(){
   
         return(
-            <span class="badge">{this.props.addedItems.length}</span>
+            <span class="badge">{this.props.totalCount}</span>
         )
     }
 }
 
 const mapStateToProps = (state)=>{
     return{
-        addedItems: state.addedItems,
+        totalCount: state.totalCount,
         
     }
 }
